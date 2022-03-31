@@ -1,0 +1,198 @@
+/* 
+
+THIS SHEET CONTAINS THE CSS STYLYING FOR ALL PAGES AND COMPONENTS
+
+*/
+
+/* include borders in size calculation for everything */
+* {
+    box-sizing: border-box;
+}
+
+/* keeping menu at the left side of small devices with 20% of the screen */
+/* arranging buttons in a vertical column */
+.navContainer {
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    background-color: gainsboro;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* custom buttons for menu */
+.navLink {
+    width: 60%;
+    height: 50px;
+    border-radius: 1em;
+    background-color: navy;
+    color: white;
+    padding: 2px;
+    margin: 5px;
+    text-align: center;
+    line-height: 45px;
+    font-size: 10px;
+    text-decoration: none;
+}
+
+.activeLink {
+    /* making the following 2 styles `important` to force override when link is active */
+    background-color: lightyellow !important;
+    color: navy !important;
+    border: 1px solid goldenrod;
+    font-weight: bold;
+}
+
+/* the content should fill the rest of the page (80%) while menu has taken the left side (20%) in small devices */
+/* not allowing horizontal scroll bar */
+.mainContainer {
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    background-color: lightyellow;
+    left: 20%;
+    top: 0px;
+    color: navy;
+    overflow-x: hidden;
+}
+
+.pageTitle {
+    margin: 25px;
+    font-weight: bold;
+}
+
+/* Projects Page */
+.prjImgContainer {
+    width: 100%;
+    text-align: center;
+    padding: 0px 10px;
+}
+
+/* ProjectDisplay Component */
+.displayItem {
+    margin-bottom: 75px;
+}
+
+.prjImg {
+    width: 80%;
+    margin: 10px 5%;
+    /* other properties */
+    border-radius: 2em;
+    border: 2px solid navy;
+}
+
+/* Home Page */
+.homePageImg {
+    background-image: url("../images/construction_mob.jpeg");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.coverTxt {
+    color:white;
+    font-weight: bold;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    margin: 50px;
+}
+
+/* About Page */
+.contentTxtWrapper {
+    margin: 50px;
+    padding: 25px;
+    background-color:darkturquoise;
+    border-radius: 1rem;
+}
+
+.contentTxt {
+    font-size: 16px;
+}
+
+.futureImg {
+    display: none;
+}
+
+/* Contact Page */
+.map {
+    display: none;
+}
+
+.addressBox {
+    height: 40%;
+    overflow-y: scroll;
+}
+
+
+
+/* --------------- DESKTOP ---------------- */
+@media only screen and (min-width: 650px) {
+
+    /* overriding properties to keep the menu at the top of the large screen devices */
+    /* overriding flex direction to keep buttons in a row */
+    .navContainer {
+        width: 100%;
+        height: 80px;
+        flex-direction: row;
+    }
+
+    /* overriding custom button to look better at the top nav bar */
+    .navLink {
+        width: 100px;
+        height: 30px;
+        line-height: 25px;
+        font-size: 14px;
+    }
+
+    /* overriding the main container to keep the rest of the page bellow the top nav bar */
+    .mainContainer {
+        width: 100%;
+        left: 0px;
+        top: 80px;
+    }
+
+    /* 3 images per row in large devices */
+    .prjImgContainer {
+        display: grid;
+        grid-template: auto /  30% 30% 30%;
+        justify-content: center; 
+    }
+
+    .prjImg {
+        width: 90%;
+    }
+
+    .homePageImg {
+        background-image: url("../images/main.jpg");
+    }
+
+    .coverTxt {
+        left: 15%;
+    }
+
+    .contentTxt {
+        font-size: 24px;
+    }
+
+    .subContainer {
+        display: grid;
+        grid-template: auto /  40% 40%;
+        justify-content: center; 
+    }
+
+    .futureImg {
+        display: block;
+        width: 90%;
+        border-radius: 1rem;
+        margin: 50px auto;
+    }
+
+    .map {
+        display: block;
+        margin-top: 50px;
+    }
+
+}
